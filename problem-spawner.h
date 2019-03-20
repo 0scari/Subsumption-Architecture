@@ -15,12 +15,12 @@ namespace problem_spawner {
     vector<problem> problems;
 
     void spawn_random_each_sec() {
-        this_thread::sleep_for(chrono::milliseconds(2000));
+        this_thread::sleep_for(chrono::milliseconds(5000));
         problem new_problem;
         new_problem.type = problem_types[(rand() % 2) + 0];
         new_problem.wheel = (rand() % 3) + 1;
         problems.push_back(new_problem);
-        cond_var.notify_all();
+        wheel_cv.notify_all();
     }
 }
 

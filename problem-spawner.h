@@ -12,14 +12,15 @@ namespace problem_spawner {
         string type;
         int wheel;
     };
-    vector<problem> encountered_problems;
+    vector<problem> problems;
 
     void spawn_random_each_sec() {
         this_thread::sleep_for(chrono::milliseconds(2000));
-        problem aProblem;
-        aProblem.type = problem_types[(rand() % 2) + 0];
-        aProblem.wheel = (rand() % 3) + 1;
-        encountered_problems.push_back(aProblem);
+        problem new_problem;
+        new_problem.type = problem_types[(rand() % 2) + 0];
+        new_problem.wheel = (rand() % 3) + 1;
+        problems.push_back(new_problem);
+        cond_var.notify_all();
     }
 }
 

@@ -1,9 +1,6 @@
 #include <iostream>
-#include <string>
 #include <thread>
-#include <mutex>
 #include <condition_variable>
-#include <cstdlib>
 #include <vector>
 
 using namespace std;
@@ -16,6 +13,12 @@ std::condition_variable cond_var;
 
 int main(void)
 {
+
+    thread sensor1(do_sensor_work, 1);
+    thread sensor2(do_sensor_work, 2);
+    thread sensor3(do_sensor_work, 3);
+
+
     thread wheel1(do_wheel_work, 1, "forward");
     thread wheel2(do_wheel_work, 2, "forward");
     thread wheel3(do_wheel_work, 3, "forward");

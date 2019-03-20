@@ -21,18 +21,22 @@ void do_wheel_work(Wheel* wheel)
             return false;
 
         });
+        wheel->sensor->is_activated = true;
+        sensor_cv.notify_all();
         lck.unlock();
     }
 };
 
-void do_sensor_work(int sensor_id) {
+void do_sensor_work(Sensor* sensor) {
     unique_lock<std::mutex> lck(sensor_mtx);
-    sensor_cv.wait(lck, []{ return false; });
-
-
-    return;
+    sensor_cv.wait(lck, [sensor]{
+        return sensor->is_activated;
+    });
     problem_spawner::problem problem = problem_spawner::problems.front();
-//    switch (problem.type)
+    if (problem.type == "rock") sensor->handle_rock_problem();
+    else if (problem.type == "sand") sensor->handle_sand_problem();
+    else if (problem.type == "cliff_edge") sensor->handle_cliff_edge_problem();
+    problem_spawner::problems.erase(problem_spawner::problems.begin());
 }
 
 

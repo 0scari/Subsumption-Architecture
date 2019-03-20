@@ -7,30 +7,35 @@ using namespace std;
 
 std::mutex wheel_mtx;
 std::mutex sensor_mtx;
+std::mutex resolver_mtx;
 
 std::condition_variable wheel_cv;
 std::condition_variable sensor_cv;
+std::condition_variable resolver_cv;
+
+vector <thread> resolver_threads;
 
 struct Sensor {
     int id;
     bool is_activated = false;
-    void handle_rock_problem();
-    void handle_sand_problem();
-    void handle_cliff_edge_problem();
+//    void handle_rock_problem(int severity);
+//    void handle_sand_problem(int severity);
+//    void handle_cliff_edge_problem(int severity);
 } sensor1, sensor2, sensor3;
-void Sensor::handle_rock_problem() {
-    cout << "rock\n";
-}
-void Sensor::handle_sand_problem() {
-    cout << "sand\n";
-
-}
-void Sensor::handle_cliff_edge_problem() {
-    cout << "cliff_edge\n";
-}
+//void Sensor::handle_rock_problem(int severity) {
+//    cout << "rock\n";
+//}
+//void Sensor::handle_sand_problem(int severity) {
+//    cout << "sand\n";
+//
+//}
+//void Sensor::handle_cliff_edge_problem(int severity) {
+//    cout << "cliff_edge\n";
+//}
 
 struct Wheel {
     int id;
+    bool is_coordinator_signal_received = false;
     string direction = "forward";
     Sensor* sensor;
 } wheel1, wheel2, wheel3;

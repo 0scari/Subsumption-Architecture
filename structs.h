@@ -12,7 +12,7 @@ struct Sensor {
 struct Wheel {
     int id;
     bool is_coordinator_signal_received;
-    string direction = "forward";
+    string movement_direction = "forward";
     Sensor* sensor;
 } wheel1, wheel2, wheel3;
 

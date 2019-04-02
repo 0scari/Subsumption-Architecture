@@ -14,13 +14,15 @@ void do_wheel_work(Wheel* wheel)
     unique_lock<std::mutex> lck(wheel_mtx, defer_lock);
     while (true) {
         lck.lock();
-        cout << "Wheel " << wheel->id << " goes " << wheel->direction << endl;
+        // print the current action
+        cout << "Wheel " << wheel->id << " goes " << wheel->movement_direction << endl;
+        // sleep until notified about a new problem
         wheel_cv.wait(lck, [wheel] {
             if (wheel->is_coordinator_signal_received) {
                 wheel->is_coordinator_signal_received = false;
                 return true;
             } else if (!problem_spawner::problems.empty()) {
-                problem_spawner::problem problem = problem_spawner::problems.front();
+                problem_spawner::Problem problem = problem_spawner::problems.front();
                 if (wheel->id == problem.wheel) {
                     wheel->sensor->is_activated = true;
                     sensor_cv.notify_all();
@@ -49,6 +51,8 @@ void resolve_rock_problem(int severity) {
 
 void resolve_sand_problem(int severity) {
     ResolutionInstrSet instruction_set;
+    // create an instruction set for each wheel according to
+    // the problem severity
     if (severity < 4) {
         instruction_set.wheel1 = "forward";
         instruction_set.wheel2 = "forward";
@@ -58,11 +62,12 @@ void resolve_sand_problem(int severity) {
         instruction_set.wheel2 = "full throttle forward";
         instruction_set.wheel3 = "full throttle forward";
     } else {
-        cout << "Requesting assistance from the Earth\n";
+        cout << "📻 Requesting assistance from the Earth\n";
         instruction_set.wheel1 = "nowhere";
         instruction_set.wheel2 = "nowhere";
         instruction_set.wheel3 = "nowhere";
     }
+    // pass the instruction set on to the coordinator
     coordinator.instuction_queue.push_back(instruction_set);
     coordinator_cv.notify_one();
 }
@@ -74,7 +79,7 @@ void resolve_cliff_edge_problem(int severity) {
         instruction_set.wheel2 = "forward";
         instruction_set.wheel3 = "forward";
     } else {
-        cout << "Requesting assistance from the Earth\n";
+        cout << "📻 Requesting assistance from the Earth\n";
         instruction_set.wheel1 = "nowhere";
         instruction_set.wheel2 = "nowhere";
         instruction_set.wheel3 = "nowhere";
@@ -90,7 +95,11 @@ void do_sensor_work(Sensor* sensor) {
             return sensor->is_activated;
         });
         sensor->is_activated = false;
-        problem_spawner::problem problem = problem_spawner::problems.front();
+
+        problem_spawner::Problem problem = problem_spawner::problems.front();
+        problem_spawner::problems.erase(problem_spawner::problems.begin());
+
+        // create a new resolver thread and add it to the list of already executing ones
         if (problem.type == "rock") {
             resolver_threads.emplace_back(resolve_rock_problem, problem.severity);
         } else if (problem.type == "sand") {
@@ -98,24 +107,25 @@ void do_sensor_work(Sensor* sensor) {
         } else if (problem.type == "cliff_edge") {
             resolver_threads.emplace_back(resolve_cliff_edge_problem, problem.severity);
         };
-        problem_spawner::problems.erase(problem_spawner::problems.begin());
     }
 }
 
 void do_coordinator_work() {
     while (true) {
-        unique_lock<std::mutex> lck(manager_mtx);
+        unique_lock<std::mutex> lck(coordinator_mtx);
         coordinator_cv.wait(lck, []{
             return !coordinator.instuction_queue.empty();
         });
 
-        coordinator.wheels[0]->direction = coordinator.instuction_queue[0].wheel1;
+        // assign the activities to the wheels
+        coordinator.wheels[0]->movement_direction = coordinator.instuction_queue[0].wheel1;
         coordinator.wheels[0]->is_coordinator_signal_received = true;
-        coordinator.wheels[1]->direction = coordinator.instuction_queue[0].wheel2;
+        coordinator.wheels[1]->movement_direction = coordinator.instuction_queue[0].wheel2;
         coordinator.wheels[1]->is_coordinator_signal_received = true;
-        coordinator.wheels[2]->direction = coordinator.instuction_queue[0].wheel3;
+        coordinator.wheels[2]->movement_direction = coordinator.instuction_queue[0].wheel3;
         coordinator.wheels[2]->is_coordinator_signal_received = true;
 
+        // notify the wheels about their activity changes
         wheel_cv.notify_all();
         coordinator.instuction_queue.erase(coordinator.instuction_queue.begin());
         lck.unlock();

@@ -10,12 +10,15 @@ using namespace std;
 
 std::mutex wheel_mtx;
 std::mutex sensor_mtx;
-std::mutex manager_mtx;
+std::mutex coordinator_mtx;
 
 std::condition_variable wheel_cv;
 std::condition_variable sensor_cv;
 std::condition_variable coordinator_cv;
 
+/**
+ * A list of threads where the resolver operations are executed
+ */
 vector <thread> resolver_threads;
 
 #include "structs.h"
@@ -42,8 +45,9 @@ int main()
     thread wheel_t2(do_wheel_work, &wheel2);
     thread wheel_t3(do_wheel_work, &wheel3);
 
+// locking the app in an infinite loop
     while (true) {
-        thread spawner(problem_spawner::spawn_random_each_sec);
+        thread spawner(problem_spawner::respawn);
         spawner.join();
     }
 }

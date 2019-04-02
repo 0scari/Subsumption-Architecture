@@ -1,0 +1,164 @@
+Wheel 1 goes forward
+Wheel 2 goes forward
+Wheel 3 goes forward
+❗️New problem: cliff_edge for wheel: 3 severity: 2❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: sand for wheel: 3 severity: 9❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: rock for wheel: 3 severity: 1❗️
+Wheel 3 goes forward
+Wheel 1 goes forward
+Wheel 2 goes forward
+❗️New problem: cliff_edge for wheel: 3 severity: 7❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+❗️New problem: rock for wheel: 1 severity: 6❗️
+Wheel 1 goes forward
+Wheel 2 goes forward
+Wheel 3 goes forward
+❗️New problem: sand for wheel: 2 severity: 2❗️
+Wheel 1 goes forward
+Wheel 2 goes forward
+Wheel 3 goes forward
+❗️New problem: cliff_edge for wheel: 1 severity: 5❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: cliff_edge for wheel: 3 severity: 2❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 10❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: rock for wheel: 2 severity: 6❗️
+Wheel 3 goes forward
+Wheel 1 goes forward
+Wheel 2 goes forward
+❗️New problem: cliff_edge for wheel: 3 severity: 6❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 7❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+Wheel 3 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 9❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+Wheel 3 goes nowhere
+❗️New problem: rock for wheel: 3 severity: 8❗️
+Wheel 2 goes to perform rock evasion maneuver
+Wheel 1 goes to perform rock evasion maneuver
+Wheel 3 goes to perform rock evasion maneuver
+❗️New problem: cliff_edge for wheel: 3 severity: 2❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+❗️New problem: sand for wheel: 2 severity: 5❗️
+Wheel 1 goes full throttle forward
+Wheel 3 goes full throttle forward
+Wheel 2 goes full throttle forward
+❗️New problem: rock for wheel: 3 severity: 9❗️
+Wheel 1 goes to perform rock evasion maneuver
+Wheel 3 goes to perform rock evasion maneuver
+Wheel 2 goes to perform rock evasion maneuver
+❗️New problem: sand for wheel: 2 severity: 9❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 2❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: sand for wheel: 2 severity: 5❗️
+Wheel 2 goes full throttle forward
+Wheel 1 goes full throttle forward
+Wheel 3 goes full throttle forward
+❗️New problem: cliff_edge for wheel: 1 severity: 9❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: sand for wheel: 2 severity: 11❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: rock for wheel: 1 severity: 9❗️
+Wheel 1 goes to perform rock evasion maneuver
+Wheel 3 goes to perform rock evasion maneuver
+Wheel 2 goes to perform rock evasion maneuver
+❗️New problem: cliff_edge for wheel: 2 severity: 3❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 6❗️
+📻 Requesting assistance from the Earth
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+❗️New problem: cliff_edge for wheel: 1 severity: 3❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+Wheel 2 goes nowhere
+❗️New problem: sand for wheel: 1 severity: 2❗️
+Wheel 3 goes forward
+Wheel 2 goes forward
+Wheel 1 goes forward
+❗️New problem: cliff_edge for wheel: 2 severity: 6❗️
+📻 Requesting assistance from the Earth
+Wheel 3 goes nowhere
+Wheel 2 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: sand for wheel: 1 severity: 8❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: sand for wheel: 1 severity: 2❗️
+Wheel 3 goes forward
+Wheel 2 goes forward
+Wheel 1 goes forward
+❗️New problem: rock for wheel: 3 severity: 4❗️
+Wheel 2 goes forward
+Wheel 3 goes forward
+Wheel 1 goes forward
+❗️New problem: cliff_edge for wheel: 3 severity: 10❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: cliff_edge for wheel: 3 severity: 2❗️
+📻 Requesting assistance from the Earth
+Wheel 2 goes nowhere
+Wheel 3 goes nowhere
+Wheel 1 goes nowhere
+❗️New problem: rock for wheel: 1 severity: 1❗️
+Wheel 2 goes forward
+Wheel 3 goes forward
+Wheel 1 goes forward
+❗️New problem: sand for wheel: 3 severity: 3❗️
+Wheel 2 goes forward
+Wheel 1 goes forward
+Wheel 3 goes forward
